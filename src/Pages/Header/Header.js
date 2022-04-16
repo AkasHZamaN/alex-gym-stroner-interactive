@@ -10,12 +10,12 @@ const Header = () => {
         </h2>
       </article>
       
-      <nav className="d-flex justify-content-center align-items-center bg-success bg-opacity-50">
-          <CustomLink className="me-5" to={'/'}>Home</CustomLink>
-          <CustomLink className="me-5" to={'/blogs'}>Blogs</CustomLink>
-          <CustomLink className="me-5" to={'/about'}>About</CustomLink>
-          <CustomLink className="me-5" to={'/register'}>Register</CustomLink>
-          <CustomLink className="me-5" to={'/login'}>Login</CustomLink>
+      <nav className="d-flex justify-content-end align-items-center bg-success bg-opacity-50 p-2 mx-auto">
+          <CustomLink className="me-4" to={'/'}>Home</CustomLink>
+          <CustomLink className="me-4" to={'/blogs'}>Blogs</CustomLink>
+          <CustomLink className="me-4" to={'/about'}>About</CustomLink>
+          <CustomLink className="me-4" to={'/register'}>Register</CustomLink>
+          <CustomLink className="me-4" to={'/login'}>Login</CustomLink>
       </nav>
 
     </section>
