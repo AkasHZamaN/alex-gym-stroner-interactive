@@ -13,10 +13,7 @@ const Home = () => {
               src="https://img.freepik.com/free-vector/realistic-fitness-facebook-cover_23-2149236554.jpg?w=1060"
               alt="First slide"
             />
-            <Carousel.Caption>
-              <h3>The health channel!!</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
+            
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -26,10 +23,7 @@ const Home = () => {
               alt="Second slide"
             />
 
-            <Carousel.Caption>
-              <h3>The health channel!!</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
+            
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -39,12 +33,7 @@ const Home = () => {
               alt="Third slide"
             />
 
-            <Carousel.Caption>
-              <h3>The health channel!!</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
+            
           </Carousel.Item>
         </Carousel>
       </article>
