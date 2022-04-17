@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Footer = () => {
+    const today = new Date();
+    const year = today.getFullYear();
     return (
-        <section>
-            <article className='w-100 bg-success bg-opacity-75 mx-auto d-flex justify-content-between align-items-center row row-cols-1 row-cols-lg-3 g-4 p-3 mt-5'>
+        <section className='w-100 bg-success bg-opacity-75'>
+
+            <article className='w-100 mx-auto d-flex justify-content-between align-items-center row row-cols-1 row-cols-lg-3 g-4 p-3 mt-5'>
                 
                 <article className='d-flex justify-content-center  align-items-center'>
                     <img className='w-25 h-50' src="https://i.postimg.cc/d1vXyrwS/alex-gym-stone.png" alt="" />
@@ -28,6 +32,16 @@ const Footer = () => {
                         <p>E-Mail: info@example.com</p>
                         <p>Address: <span style={{fontFamily:'cursive'}}>350 Avenue, Sylhet,<br />3100-SYLHET</span></p>
                     </article>
+                </article>
+            </article>
+            {/* bottom footer  */}
+            <article className='w-100 mx-auto d-flex justify-content-between align-items-center text-white fw-bold row row-cols-2 row-cols-lg-3 g-3  p-3'>
+                <article className='px-2'>
+                    <small>Copyright ©{year}</small>
+                </article>
+                <article className='d-flex justify-content-between align-items-center text-warning px-3'>                    
+                    <small>FAQs</small>
+                    <small>Privacy</small>                    
                 </article>
             </article>
         </section>

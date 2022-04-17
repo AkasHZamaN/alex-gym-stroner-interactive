@@ -8,13 +8,13 @@ const HomeServices = ({service}) => {
   return (
     <section>
       <article className="my-3">
-        <Card className="rounded-3 border-0">
+        <Card className="w-100 rounded-3 border-0">
           <Card.Img variant="top rounded-3" src={picture} />
           <Card.Body>
             <Card.Title className="text-success fw-bold text-opacity-100">{serviceName}</Card.Title>
             <p className="fw-bold">$ <span className="text-danger">{price}</span></p>
             <Card.Text>{details}</Card.Text>
-            <Button variant="success opacity-75 w-100 text-white fw-bold d-flex justify-content-center align-items-center ">Hire Me <SpeakerphoneIcon style={{height: '22px', marginLeft: '2px'}} className="text-warning"></SpeakerphoneIcon></Button>
+            <Button variant="outline-success opacity-75 w-50 text-success fw-bold d-flex justify-content-center align-items-center ">Hire Me <SpeakerphoneIcon style={{height: '22px', marginLeft: '2px'}} className="text-warning"></SpeakerphoneIcon></Button>
           </Card.Body>
         </Card>
       </article>

@@ -44,18 +44,21 @@ const Home = () => {
         </Carousel>
       </article>
       {/* services area  */}
-      <article className='w-100 mx-auto row row cols-1 row-cols-lg-3 g-4 p-2'>
-                {
-                    services.slice(0,3).map(service => <HomeServices
-                    key={service.id}
-                    service={service}
-                    ></HomeServices> )
-                }
-            </article>
+      <article>
+        <h2 style={{fontFamily:'Vernon Adams, Cyreal, Jacques Le Bailly', fontWeight:'bolder', fontSize:'30px', color:'#02B290'}} className="text-center mt-4">Welcome to <span className="text-danger">Fitness Zone</span></h2>
+      <article className='w-100 mx-auto row row cols-1 row-cols-lg-3 g-4 p-3'>
+        {
+          services.slice(0,3).map(service => <HomeServices
+          key={service.id}
+          service={service}
+          ></HomeServices> )
+        }
+      </article>
+      </article>
 
-            <p className="text-center d-flex justify-content-center align-items-center">
-            <Button onClick={()=>servicesItems()} variant="danger opacity-75 w-25 text-white fw-bold">See More <ArrowRightIcon style={{height: '22px'}}></ArrowRightIcon> </Button>
-            </p>
+      <p className="text-center d-flex justify-content-center align-items-center g-2">
+      <Button onClick={()=>servicesItems()} variant="outline-danger opacity-75  text-success fw-bold">See More <ArrowRightIcon style={{height: '22px'}}></ArrowRightIcon> </Button>
+      </p>
       
     </section>
   );

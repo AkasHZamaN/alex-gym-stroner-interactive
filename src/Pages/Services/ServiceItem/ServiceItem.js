@@ -13,7 +13,7 @@ const ServiceItem = ({ service }) => {
             <Card.Title className="text-success fw-bold text-opacity-100">{serviceName}</Card.Title>
             <p className="fw-bold">$ <span className="text-danger">{price}</span></p>
             <Card.Text>{details}</Card.Text>
-            <Button variant="success opacity-75 w-100 text-white fw-bold d-flex justify-content-center align-items-center ">Hire Me <SpeakerphoneIcon style={{height: '22px', marginLeft: '2px'}} className="text-warning"></SpeakerphoneIcon></Button>
+            <Button variant="outline-success opacity-75 w-50 text-success fw-bold d-flex justify-content-center align-items-center ">Hire Me <SpeakerphoneIcon style={{height: '22px', marginLeft: '2px'}} className="text-warning"></SpeakerphoneIcon></Button>
           </Card.Body>
         </Card>
       </article>
