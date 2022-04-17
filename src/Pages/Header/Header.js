@@ -6,7 +6,7 @@ const Header = () => {
     <section>
       <article className="bg-success bg-opacity-75 p-2">
         <h2 className="text-center text-white">
-          Alex Gym <span className="text-warning fs-1 fw-bold">Stone</span>
+          Alex Gym <span className="text-danger fs-1 fw-bold">Stone</span>
         </h2>
       </article>
       
