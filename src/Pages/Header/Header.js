@@ -5,9 +5,13 @@ const Header = () => {
   return (
     <section>
       <article className="bg-success bg-opacity-75 p-2">
-        <h2 className="text-center text-white">
-          Alex Gym <span className="text-danger fs-1 fw-bold">Stone</span>
-        </h2>
+      <article className='d-flex justify-content-start  align-items-center px-5'>
+                    <img style={{wide:'100px', height:'80px'}} src="https://i.postimg.cc/d1vXyrwS/alex-gym-stone.png" alt="" />
+                    <article>
+                    <h1 style={{fontFamily:'Vernon Adams, Cyreal, Jacques Le Bailly', fontWeight:'bolder', fontSize:'30px', color:'white'}}>Alex GYM <span className='text-warning'>Stone</span></h1>
+                    <small style={{fontSize:'12px', fontWeight:'bold', fontStyle:'italic', color:'white'}}>EST: 2018</small>
+                    </article>
+                </article>
       </article>
       
       <nav className="d-flex justify-content-end align-items-center bg-success bg-opacity-50 p-2 mx-auto">
