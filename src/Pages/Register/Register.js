@@ -1,14 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import {useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth'
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Register = () => {
+    const navigate = useNavigate();
+    // const [name, setName] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+
+    const registrationForm = (event) => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        createUserWithEmailAndPassword(email, password);
+    }
+    
+    if(user){
+        navigate('/');
+    }
+
     return (
         <section>
-      <article className="w-50 mx-auto text-center">
+      <article className="w-50 mx-auto my-3 text-center">
       <img style={{height:'90px'}} src="https://i.postimg.cc/d1vXyrwS/alex-gym-stone.png" alt="" />
-      <h2 style={{fontFamily:'Vernon Adams, Cyreal, Jacques Le Bailly', fontWeight:'bold'}}>Alex GYM <span className="text-success">Stone</span></h2>
+      <h2 style={{fontFamily:'Vernon Adams, Cyreal, Jacques Le Bailly', fontWeight:'bold',color:'#E07C24'}}>Alex GYM <span className="text-success">Stone</span></h2>
         <article className="">
-          <form>
+          <form onSubmit={registrationForm}>
             <input
                 className="form-control my-3"
               type="text"
