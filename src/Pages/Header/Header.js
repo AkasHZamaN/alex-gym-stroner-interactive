@@ -1,7 +1,16 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 
 const Header = () => {
+  
+  const [user] = useAuthState(auth);
+  const handleSignOut = () => {
+    signOut(auth);
+  }
+
   return (
     <section>
       <article className="bg-success bg-opacity-75 p-2">
@@ -20,7 +29,11 @@ const Header = () => {
           <CustomLink className="me-3" to={'/blogs'}>Blogs</CustomLink>
           <CustomLink className="me-3" to={'/about'}>About</CustomLink>
           <CustomLink className="me-3" to={'/register'}>Register</CustomLink>
-          <CustomLink className="me-3" to={'/login'}>Login</CustomLink>
+          {
+            user ?
+            <button style={{fontFamily:'cursive'}} onClick={handleSignOut} className="border-0 bg-warning rounded-3 text-white fw-bold p-1">Sgin Out</button>
+            :
+            <CustomLink className="me-3" to={'/login'}>Login</CustomLink>}
       </nav>
 
     </section>
