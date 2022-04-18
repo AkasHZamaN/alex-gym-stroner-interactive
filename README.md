@@ -1,8 +1,21 @@
-# Getting Started with Create React App
+# Alex GYM Stone
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Scripts in this Project:
+
+* I used created custom hooks.
+* Use Destructuring when shows data in the UI.
+* Here I created own json file for Service.
+* I also set react routes and dynamic route and some files are Protected. 
+* This project is authentication based. 
+* Password and Email and another social sign is used for authentication.
+
+## Available Framework and Library
+* I use React Boostrap framework for responsive and other css classes.
+* I use a JavaScript Library which is React.
+* Also used Firebase for Authentication that's make our day easy.
+* Also used for some neccessary icons that's why i install heroicons framwork. 
 
 In the project directory, you can run:
 

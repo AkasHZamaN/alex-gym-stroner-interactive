@@ -7,7 +7,7 @@ const ErrorMessage = () => {
             <div style={{height:'400px'}} className='w-100 d-flex justify-content-center align-items-center'>
              <Spinner animation="border" variant="success" />
         </div>
-        <h2>Filled The Form Carefully</h2>
+        <h2 className='text-center'>Filled The Form Carefully</h2>
         </div>
     );
 };
