@@ -82,7 +82,7 @@ const Login = () => {
              {/* error messages */}
             <p className="text-danger fw-bolder">{error}</p>
 
-            <input className="w-50 bg-success opacity-75 text-white rounded-3 border-none py-1 mt-3 fw-bold" type="submit" value="Login" />
+            <input className="w-50 bg-success opacity-75 text-white rounded-3  py-1 mt-3 border-0 fw-bold" type="submit" value="Login" />
           </form>
           <p className="text-start pt-3">
             Are your new user?{" "}
@@ -102,30 +102,8 @@ const Login = () => {
              reset your password
             </button>
           </p>
-              {/* make for toast */}
           <ToastContainer />
-
-          {/* create or dived  */}
-
-            <article className="d-flex justify-content-center align-items-center">
-              <article style={{height:'2px', width:'250px', backgroundColor:'lightgray'}}></article>
-              <p className="mx-2">or</p>
-              <article style={{height:'1px', width:'250px', backgroundColor:'lightgray'}}></article>
-            </article>
-
-          {/* create or dived  */}
-
-            {/* social login  */}
-
-          {/* <article className="w-100 mx-auto">
-              <button className="bg-success text-white py-1 fw-bold rounded-3 w-100 mx-auto my-3 d-flex justify-content-center align-items-center">
-                <img style={{height:'25px',marginRight:'5px'}} src="https://i.postimg.cc/RhBmjrmg/google.png" alt="" />
-                Google Sign In
-                </button>
-          </article> */}
           <SocialLogin></SocialLogin>
-
-            {/* social login  */}
         </article>
       </article>
     </section>

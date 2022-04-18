@@ -3,6 +3,7 @@ import {useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebas
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import SocialLogin from '../Login/SocialLogin/SocialLogin';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -82,6 +83,7 @@ const Register = () => {
               Please Login
             </Link>
           </p>
+          <SocialLogin></SocialLogin>
         </article>
       </article>
     </section>

@@ -24,11 +24,18 @@ const SocialLogin = () => {
 
     return (
         <div>
+            
+            <article className="d-flex justify-content-center align-items-center">
+              <article style={{height:'2px', width:'250px', backgroundColor:'lightgray'}}></article>
+              <p className="mx-2">or</p>
+              <article style={{height:'1px', width:'250px', backgroundColor:'lightgray'}}></article>
+            </article>
+
             {errorText}
             <article className="w-100 mx-auto">
               <button 
               onClick={()=> signInWithGoogle()}
-               className="bg-success text-white py-1 fw-bold rounded-3 w-100 mx-auto my-3 d-flex justify-content-center align-items-center">
+               className="bg-success opacity-75 border-0 text-white py-1 fw-bold rounded-3 w-100 mx-auto my-3 d-flex justify-content-center align-items-center">
                 <img style={{height:'25px',marginRight:'5px'}} src="https://i.postimg.cc/RhBmjrmg/google.png" alt="" />
                 Google Sign In
                 </button>
