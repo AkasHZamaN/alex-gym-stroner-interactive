@@ -48,7 +48,7 @@ const Login = () => {
         const email = emailRef.current.value;
         await sendPasswordResetEmail(email);
         if(email){
-          toast('sent email');
+          toast('Please Check Your Email');
         }
         else{
           toast('Please Enter Your Email');

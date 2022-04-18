@@ -1,7 +1,6 @@
 import React from "react";
 import { Toast } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
 
 const Checkout = () => {
