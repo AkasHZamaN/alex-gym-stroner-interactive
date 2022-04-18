@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {useCreateUserWithEmailAndPassword, useUpdateProfile} from 'react-firebase-hooks/auth'
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 
 const Register = () => {
     const navigate = useNavigate();
-    // const [name, setName] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
     const [
         createUserWithEmailAndPassword,
         user,
@@ -15,20 +13,27 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
-      const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+      const [updateProfile] = useUpdateProfile(auth);
 
     const registrationForm = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
+        
         await createUserWithEmailAndPassword(email, password);
-
         await updateProfile({ displayName: name });
-        console.log('Updated profile');
-        navigate('/');
+          // console.log('Updated profile');
+          navigate('/');
     }
     
+    if(error){
+      // return <ErrorMessage></ErrorMessage>
+      return <div><p>Error: {error?.message}</p></div>
+    }
+    if(loading){
+      return <Loading></Loading>
+    }
     if(user){
         console.log('user', user);
     }
@@ -53,14 +58,19 @@ const Register = () => {
               name="email"
               id="email"
               placeholder="Enter Your Email"
+             required
             />
+            <div><p>{error?.message}</p></div>
             <input
             className="form-control my-3"
               type="password"
               name="password"
               id="password"
               placeholder="Enter Your Password"
+              required
             />
+            <div><p>{error?.message}</p></div>
+
             <input className="w-50 bg-success opacity-75 text-white rounded-3 border-none py-1 mt-3 fw-bold" type="submit" value="Register" />
           </form>
           <p className="text-start py-3">
