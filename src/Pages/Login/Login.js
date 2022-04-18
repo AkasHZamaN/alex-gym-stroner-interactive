@@ -1,12 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from "../Loading/Loading";
 
 
 const Login = () => {
+    const [error, setError] = useState('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
@@ -17,8 +19,7 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
-        loading,
-        error,
+        loading        
       ] = useSignInWithEmailAndPassword(auth);
 
       const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -28,9 +29,16 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        signInWithEmailAndPassword(email, password);
+        signInWithEmailAndPassword(email, password)
+        .catch(
+          setError('Please check your Email & Password!!')
+        )
       }
-    
+      
+      if(loading){
+        return <Loading></Loading>
+      }
+      
       if(user){
           navigate(from, {replace: true });
       }
@@ -38,7 +46,13 @@ const Login = () => {
       const resetPassword = async() => {
         const email = emailRef.current.value;
         await sendPasswordResetEmail(email);
-        toast('sent email');
+        if(email){
+          toast('sent email');
+        }
+        else{
+          toast('Please Enter Your Email');
+        }
+        
       }
 
   return (
@@ -64,6 +78,9 @@ const Login = () => {
               placeholder="Enter Your Password"
               required
             />
+             {/* error messages */}
+            <p className="text-danger fw-bolder">{error}</p>
+
             <input className="w-50 bg-success opacity-75 text-white rounded-3 border-none py-1 mt-3 fw-bold" type="submit" value="Login" />
           </form>
           <p className="text-start pt-3">
