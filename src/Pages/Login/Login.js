@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
     const emailRef = useRef('');
@@ -18,6 +21,8 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
 
+      const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
       const loginForm = (event) => {
           event.preventDefault();
         const email = emailRef.current.value;
@@ -28,6 +33,12 @@ const Login = () => {
     
       if(user){
           navigate(from, {replace: true });
+      }
+
+      const resetPassword = async() => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        toast('sent email');
       }
 
   return (
@@ -55,7 +66,7 @@ const Login = () => {
             />
             <input className="w-50 bg-success opacity-75 text-white rounded-3 border-none py-1 mt-3 fw-bold" type="submit" value="Login" />
           </form>
-          <p className="text-start py-3">
+          <p className="text-start pt-3">
             Are your new user?{" "}
             <Link
               to={"/register"}
@@ -64,6 +75,18 @@ const Login = () => {
               Please create an account
             </Link>
           </p>
+          <p className="text-start">
+            Forget Password?{" "}
+            <button
+              className="text-danger text-decoration-none border-0 bg-white pe-auto"
+              onClick={resetPassword}
+            >
+             reset your password
+            </button>
+          </p>
+
+          <ToastContainer />
+
         </article>
       </article>
     </section>

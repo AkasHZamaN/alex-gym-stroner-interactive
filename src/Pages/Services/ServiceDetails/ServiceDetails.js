@@ -18,9 +18,7 @@ const ServiceDetails = () => {
 
     return (
         <section>
-            <p>Service Id: {serviceId}</p>
-            {/* <p>Service Name: {items?.serviceName}</p> */}
-            <article className='bg-danger opacity-75 w-50 py-3 mx-auto text-center rounded-3 text-white'>
+            <article className='bg-danger opacity-75 w-50 mt-5 py-3 mx-auto text-center rounded-3 text-white'>
                 <img src="https://i.postimg.cc/d1vXyrwS/alex-gym-stone.png" alt="" />
                 <p className='w-75 mx-auto'><small className='px-3'>{items?.details}</small></p>
                 <h3 style={{fontFamily:'Vernon Adams, Cyreal, Jacques Le Bailly', fontWeight:'bold'}} >{items?.serviceName}</h3>
