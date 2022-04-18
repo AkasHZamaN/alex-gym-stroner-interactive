@@ -23,7 +23,7 @@ const Header = () => {
                 </article>
       </article>
       
-      <nav className="d-flex justify-content-end align-items-center bg-warning  p-2 mx-auto">
+      <nav className="d-flex justify-content-end align-items-center bg-warning opacity-75  p-2 mx-auto">
           <CustomLink className="me-3" to={'/'}>Home</CustomLink>
           <CustomLink className="me-3" to={'/services'}>Services</CustomLink>
           <CustomLink className="me-3" to={'/blogs'}>Blogs</CustomLink>
