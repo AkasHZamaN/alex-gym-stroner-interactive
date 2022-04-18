@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Checkout = () => {
   return (
     <div className="w-100 mx-auto">
-      <Toast className="w-50 mx-auto my-5">
+      <Toast className="w-75 mx-auto my-5">
         <Toast.Header>
           <img style={{height:'90px'}} src="https://i.postimg.cc/d1vXyrwS/alex-gym-stone.png" className="rounded me-2" alt="" />
           <strong className="me-auto text-success fw-bold">Alex GYM <span className="text-warning">Stone</span></strong>

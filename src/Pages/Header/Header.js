@@ -23,7 +23,7 @@ const Header = () => {
                 </article>
       </article>
       
-      <nav className="d-flex justify-content-end align-items-center bg-success bg-opacity-50 p-2 mx-auto">
+      <nav className="d-flex justify-content-end align-items-center bg-warning  p-2 mx-auto">
           <CustomLink className="me-3" to={'/'}>Home</CustomLink>
           <CustomLink className="me-3" to={'/services'}>Services</CustomLink>
           <CustomLink className="me-3" to={'/blogs'}>Blogs</CustomLink>
@@ -31,7 +31,7 @@ const Header = () => {
           <CustomLink className="me-3" to={'/register'}>Register</CustomLink>
           {
             user ?
-            <button style={{fontFamily:'cursive'}} onClick={handleSignOut} className="border-0 bg-warning rounded-3 text-white fw-bold p-1">Sgin Out</button>
+            <button style={{fontFamily:'cursive'}} onClick={handleSignOut} className="border-0 bg-danger rounded-3 text-white fw-bold p-1">Sgin Out</button>
             :
             <CustomLink className="me-3" to={'/login'}>Login</CustomLink>}
       </nav>
