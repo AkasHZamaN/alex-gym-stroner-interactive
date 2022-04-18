@@ -3,7 +3,7 @@ import React from 'react';
 const Blogs = () => {
     return (
         <>
-            <div className='container my-5'>
+            <section className='container my-5'>
                 <h5 className='w-75 mx-auto'>Q.1: Difference between authorization and authentication.</h5>
                 <p className='w-75 mx-auto '>Authorization means granting a user account configured on the computer system the right to make use of a resource (allocating the user privileges on the resource). Authentication protects the validity of the user account by testing that the person accessing that account is who s/he says s/he is.</p>
 
@@ -13,7 +13,7 @@ const Blogs = () => {
 
                 <h5 className='w-75 mx-auto'>Q.3: What other services does firebase provide other than authentication?</h5>
                 <p className='w-75 mx-auto'>There are some other thing that firebase provides such as Realtime Database, Clode Messaging, Storage, Hosting, Remote config etc.</p>
-            </div>
+            </section>
         </>
     );
 };

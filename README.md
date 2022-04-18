@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Use Destructuring when shows data in the UI.
 * Here I created own json file for Service.
 * I also set react routes and dynamic route and some files are Protected. 
-* This project is authentication based. 
+* This project is authentication based and have validation and verification. 
 * Password and Email and another social sign is used for authentication.
 
 ## Available Framework and Library
